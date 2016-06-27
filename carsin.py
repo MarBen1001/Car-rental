@@ -1,4 +1,3 @@
-      
 from car_new import Car, DieselCar, ElectricCar, HybridCar, PetrolCar
 
     
@@ -78,9 +77,9 @@ class  CarRental(object):
         #carback = 'car'
         #self.petrol_list.append(carline)
         #print self.carlist1,'\n\n\n '
-        next = self.rent_petrol_car()
+        next = self.rent_car()
         
-    def rent_petrol_car(self):
+    def rent_car(self):
         print 'Rent car'
         try:
             cars_needed = int(raw_input (' how many cars do you want?\n>'))
@@ -143,142 +142,15 @@ class  CarRental(object):
 
         #carout.setMake = ('Honda Civic Hybrid') #check re inheritance down the line Car..ElectricCar..HybridCar
 
-        #print carout.setMake 
-        
-        
-        
-        
-        
-        
-        
+        #print carout.setMake       
     
-    def rental_transmission_menu(self):
-        print ' 1:  Automatic'
-        print ' 2:  Manual'
-        self.handle_choices()
-        
-    
-    def rental_fuel_menu(self):
-        print ' 1:  Petrol Car'
-        print ' 2:  Electric Car'
-        print ' 3:  Diesel Car'
-        print ' 4:  Hybrid Car'
-        
-        choice = raw_input('Enter Number(1 or 2 or ... etc) of Required Selection\n\n>') 
-        return choice
-
-
-       
-    def rental_electric_car(self):
-        print 'ello'
-        
-    def rental_diesel_car(self):
-        print 'dello'
-        
-    def rental_hybrid_car(self):
-        print 'hello'
-        
-    def rental_welcome_menu(self):
-    
-        print ' 1: Browse'
-        print ' 2: Rental'  
-        print ' 3: Extend Rental Due Date'
-        print ' 4: Return Car'  
-        
-         
-        greeting = raw_input('Enter Number(1 or 2 or ... etc) of Required Selection\n\n>') 
-        return greeting
-
-            
-    def browse(self):
-        filehandle = open('carlist.csv')
-        for line in filehandle:
-            carline = line.rstrip()
-            print carline
-            
-            
-        
-    def rental_selection_banner(self):    
-        print  ' Car Fuel  Menu\n\n '
-        print  ' Car Size  Menu\n\n '
-        print  ' Car Transmission  Menu\n\n ' 
-        print  ' Car ' 
-        self.handle_choices()   
-                                
-      
-      
-    def rent_a_car(self):
-        print 'rent'
-           
-    def renew_a_rental(self):
-        print ' renew'
-        
-        
-    def return_a_car(self):
-        print 'return'
-      
-      
-
 if __name__ == '__main__':
 
     
     #words = open('carlist.txt').readlines()
     #print map(lambda x: x.strip(), words)
     
+    
     carrental = CarRental()
 
-    input = raw_input('Welcome - do you need list of cars imported? \n >Y or N:  ')
-    
-    if  input == 'Y' or input == 'y':
-    
-        carrental.get_list_of_cars()
-        
-    else:
-     
-        greetings = carrental.rental_welcome_menu()
-    
-    if greetings == '1':
-        print 'here'
-        carrental.browse()
-    elif greetings == '2':
-        carrental.rent_a_car()
-    elif greetings == '3':
-        carrental.renew_a_rental()
-    elif greetings == '4':
-        carrental.return_a_car()
-    else:
-        print 'Invalid Choice'    
-        
-      
-      
-    choices = carrental.rental_fuel_menu()
-    
-    if choices == '1':
-        carrental.rent_petrol_car()
-    elif choices == '2':
-        carrental.rental_electric_car()
-    elif choices == '3':
-        carrental.rental_diesel_car()
-    elif choices == '4':
-        carrental.rental_hybrid_car()
-    else:
-        print 'Invalid Choice'   
-   
-
-        
-         
-    input = raw_input ("Enter 'y' to proceed to Main Menu")      # call Main Menu function
-    
-    if not input =='y' and not input =='Y' and not input == '':  # accept y,Y,return to proceed
-        exit()                                                   # and if not program ends
-
-
-
-# add 40 cars from today
-
-#enter todays date todays date
-
-#check car availability by checking date?
-
-#rental return date
-
+    carrental.get_list_of_cars()    
