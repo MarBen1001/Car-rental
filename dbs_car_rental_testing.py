@@ -2,7 +2,7 @@
 
 ############  CA 2  ################  
 
-# Tests for Car class and tried for VarRental
+# Tests for Car class and tried for CarRental
 
 
 import unittest
@@ -18,24 +18,23 @@ from car import Car, DieselCar, ElectricCar, HybridCar, PetrolCar
 class TestCarRental(unittest.TestCase): 
 
     def setUp(self):
-        self.carrental= CarRental()
-        self.carrental.rent_hybrid_car()
+        self.carrental= CarRental()  
         
+       
+    def test_car_return_petrol(self):           # no cars out - if enter any number print 'no car out'
+        self.carrental.return_petrol_car() 
+        self.assertEqual([],self.carrental.petrol_rented)
         
-    def test_pop(self):        # meant this to test pop() from empty list - can't fix it
-        try:
-            len(self.carrental.rent_hybrid_car.hybrid_list) ==0
-            self.carrental.rent_hybrid_car.hybrid_list.pop() 
-            self.assertEqual(IndexError,self.carrental.rent_hybrid_car.hybrid_list)
-        except: pass
 
 
-class TestCar(unittest.TestCase): # car functionality
+class TestCar(unittest.TestCase):               # car functionality
 
     def setUp(self):
         self.car = Car()
         self.electriccar = ElectricCar()
         self.petrolcar = PetrolCar()
+        
+    
         self.dieselcar = DieselCar()
         self.hybridcar = HybridCar()
 
@@ -86,12 +85,7 @@ class TestCar(unittest.TestCase): # car functionality
         except: ValueError
         pass
         
-   # def test_hybridtype(self): # n
-        #self.assertEqual('', self.hybridcar.getHybridType())
-        #self.hybridcar.setHybridType('Mild parallel')
-       # self.assertEqual('Mild parallel', self.hybridcar.getHybridType)
-        #AssertionError: 'Mild parallel' != <bound method HybridCar.getHybridType of
-        # <car_new.HybridCar object at 0x1022bf7d0>>
+
     
 
 if __name__ == '__main__':

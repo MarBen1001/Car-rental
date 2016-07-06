@@ -50,8 +50,7 @@ class Car(object):
             self.__transmission = transmission
         else:
             print 'Error - Manual or Automatic only'
-       
-        
+            
         
     def move(self, distance):
         if distance>0:
